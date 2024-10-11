@@ -1,42 +1,58 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+.BarraNavegador_C{
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinha horizontalmente o conteúdo */
+  height: 100vh; /* Altura total da tela */
+  
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.BarraNavegador{
+
+  width: 100%; /* A barra de navegação ocupa toda a largura */
+  background-color: #E6F5E8;
+  padding: 25px ; /* Espaçamento interno da barra */
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav {
+  
+  padding: 1rem;
+  border-radius: 5%;
+  border: 10px solid #C3E6D4;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.BarraNavegador ul {
+  width: 100vw;
+  list-style-type: none; /* Remove os marcadores da lista */
+  margin: 0; /* Remove margem */
+  padding: 0; /* Remove padding */
+  display: flex; /* Exibe os itens em linha */
+  justify-content: center; /* Centraliza os itens na barra */
 }
 
-.card {
-  padding: 2em;
+.BarraNavegador li{
+  margin: 0 15px;
 }
 
-.read-the-docs {
-  color: #888;
+.BarraNavegador ul li a {
+  color: #734818;
+  text-decoration: none;
+}
+
+.BarraNavegador ul li a:hover {
+  text-decoration: underline;
+}
+
+.centered-element {
+  background-color: lightblue; /* Cor de fundo do elemento */
+  padding: 20px;
+  border: 1px solid blue; /* Borda do elemento */
+  text-align: center; /* Centraliza texto */
 }
