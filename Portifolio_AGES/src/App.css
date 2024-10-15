@@ -6,49 +6,41 @@ body {
   font-size: larger;
 }
 .BarraNavegador_C{
+  height: 100px;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center; /* Alinha horizontalmente o conteúdo */
-  height: 100vh; /* Altura total da tela */
-  
+  justify-content: center;
+  align-items: center; /* Centraliza verticalmente */
+  position: fixed;
+  top: 0;
+  background-color: #C3E6D4; /* Ajuste a cor de fundo conforme necessário */
+  z-index: 1000; /* Certifique-se de que a barra de navegação fique acima de outros elementos */
+  padding: 10px 20px;/* Adicione padding para envolver a barra de navegação */
 }
+
 
 .BarraNavegador{
-
-  width: 100%; /* A barra de navegação ocupa toda a largura */
+  width: 90%; /* Ajuste a largura conforme necessário, por exemplo, 80% da largura da tela */
+  max-width: 1700px; /* A barra de navegação ocupa toda a largura */
   background-color: #E6F5E8;
-  padding: 25px ; /* Espaçamento interno da barra */
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  
+  justify-content: center;
+  align-items: center; /* Centraliza verticalmente o conteúdo */
+  display: flex;
+  border-radius: 6px;
+  padding: 10px 20px;
 }
 
-nav {
-  
-  padding: 1rem;
-  border-radius: 5%;
-  border: 15px solid #C3E6D4;
+.Links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.BarraNavegador ul {
-  width: 100vw;
-  list-style-type: none; /* Remove os marcadores da lista */
-  margin: 0; /* Remove margem */
-  padding: 0; /* Remove padding */
-  display: flex; /* Exibe os itens em linha */
-  justify-content:flex-end; 
-  
-  
+.Links li {
+  margin: 0 10px; /* Ajuste o espaçamento entre os links conforme necessário */
 }
 
-.BarraNavegador ul li a:hover {
-  text-decoration: underline;
-}
-
-.centered-element {
-  background-color: lightblue; /* Cor de fundo do elemento */
-  padding: 20px;
-  border: 1px solid blue; /* Borda do elemento */
-  text-align: center; /* Centraliza texto */
+.NovaDiv {
+  margin-top: 50px; /* Ajuste conforme necessário */
 }
