@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=K2D:wght@400;700&display=swap');
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'K2D', sans-serif;
+  font-size: larger;
 }
 .BarraNavegador_C{
   display: flex;
@@ -25,7 +28,7 @@ nav {
   
   padding: 1rem;
   border-radius: 5%;
-  border: 10px solid #C3E6D4;
+  border: 15px solid #C3E6D4;
 }
 
 .BarraNavegador ul {
@@ -34,16 +37,9 @@ nav {
   margin: 0; /* Remove margem */
   padding: 0; /* Remove padding */
   display: flex; /* Exibe os itens em linha */
-  justify-content: center; /* Centraliza os itens na barra */
-}
-
-.BarraNavegador li{
-  margin: 0 15px;
-}
-
-.BarraNavegador ul li a {
-  color: #734818;
-  text-decoration: none;
+  justify-content:flex-end; 
+  
+  
 }
 
 .BarraNavegador ul li a:hover {
