@@ -3,53 +3,59 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Home from "./assets/Pages/Home";
 import AboutMe from "./assets/Pages/AboutMe";
 import Contacts from "./assets/Pages/Contacts";
-import "./App.css";
 import Projects from "./assets/Pages/Projects";
+import "./App.css";
 
 const App: React.FC = () => {
   const [clickedLink, setClickedLinkState] = useState<string | null>(null);
-  
-  const linkStyle = (link: string) => {
-    return {
-      color: clickedLink === link ? '#F2707A' : 'brown',
-      fontWeight: clickedLink === link ? 900 : 'bolder', 
-    }
-  }
-  
-  const handleLinkClick = (link: string) => (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    event.preventDefault();
+
+  const linkStyle = (link: string) => ({
+    color: clickedLink === link ? '#F2707A' : 'brown',
+    fontWeight: clickedLink === link ? 900 : 'bolder',
+    marginRight: '10px', 
+    fontSize: '25px',
+  });
+
+  const handleLinkClick = (link: string) => () => {
     setClickedLinkState(link);
   };
-    
-  
+
+  const barraStyle = {
+    width: '100vw',
+    height: '120px',
+    boxSizing: 'border-box' as const,
+    backgroundColor: '#E6F5E8',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+    display: 'flex',
+    borderRadius: '6px',
+    border: '10px solid #C3E6D4',
+  };
+
+  const linksStyle = {
+    display: 'flex',
+    listStyle: 'none',
+    padding: 0,
+    margin: 0,
+  };
+
   return (
     <Router>
-      <div className="BarraNavegador_C">
-          <nav className="BarraNavegador">
-            <ul className="Links">
-              <li>
-                <Link to="/" style={linkStyle('/')} onClick={handleLinkClick('/')}>Home|</Link>
-              </li>
-              <li>
-                <Link to="/about" style={linkStyle('/about')} onClick={handleLinkClick('/about')}>About Me|</Link>
-              </li>
-              <li>
-                <Link to="/projects" style={linkStyle('/projects')} onClick={handleLinkClick('/projects')}>Projects|</Link>
-              </li>
-              <li>
-                <Link to="/contact" style={linkStyle('/contact')} onClick={handleLinkClick('/contact')}>Contact|</Link>
-              </li>
-            </ul>
-          </nav>
+      <nav style={barraStyle}>
+        <div style={linksStyle}>
+          <Link to="/" style={linkStyle('/')} onClick={handleLinkClick('/')}>Home|</Link>
+          <Link to="/about-me" style={linkStyle('/about-me')} onClick={handleLinkClick('/about-me')}>About Me|</Link>
+          <Link to="/contacts" style={linkStyle('/contacts')} onClick={handleLinkClick('/contacts')}>Contacts|</Link>
+          <Link to="/projects" style={linkStyle('/projects')} onClick={handleLinkClick('/projects')}>Projects|</Link>
         </div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<AboutMe />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contacts />} />
-        </Routes>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about-me" element={<AboutMe />} />
+        <Route path="/contacts" element={<Contacts />} />
+        <Route path="/projects" element={<Projects />} />
+      </Routes>
     </Router>
-    
   );
 };
 
